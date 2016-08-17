@@ -273,7 +273,7 @@ class WcpayController(ReportController):
             return_msg = 'OK'
         else:
             return_code = 'FAIL'
-            return_msg = '签名失败'
+            return_msg = 'SIGN FAILED'
 
         wc_return = Wxpay_server_pub()
         wc_return.setReturnParameter('return_code', return_code)
@@ -350,7 +350,7 @@ class WcpayController(ReportController):
         if not tx_ids:
             if order.amount_total:
                 state = 'error'
-                message = '<p>%s</p>' % _('There seems to be an error with your request.')
+                message = '<p>%s</p>' % _('Order price but payment transaction not exist.')
         else:
             tx = request.registry['payment.transaction'].browse(cr, SUPERUSER_ID, tx_ids[0], context=context)
             state = tx.state
@@ -358,7 +358,7 @@ class WcpayController(ReportController):
             if state == 'done':
                 message = '<p>%s</p>' % _('Your payment has been received.')
             elif state == 'cancel':
-                message = '<p>%s</p>' % _('The payment seems to have been canceled.')
+                message = '<p>%s</p>' % _('The payment has been canceled.')
             elif state == 'pending' and tx.acquirer_id.validation == 'manual':
                 message = '<p>%s</p>' % _('Your transaction is waiting confirmation.')
                 if tx.acquirer_id.post_msg:
@@ -400,7 +400,7 @@ class WcpayController(ReportController):
         if not tx_ids:
             if invoice and invoice.residual:
                 state = 'error'
-                message = '<p>%s</p>' % _('There seems to be an error with your request.')
+                message = '<p>%s</p>' % _('Invoice price exist but payment transaction not exist.')
         else:
             tx = request.registry['payment.transaction'].browse(cr, SUPERUSER_ID, tx_ids[0], context=context)
             state = tx.state
@@ -408,7 +408,7 @@ class WcpayController(ReportController):
             if state == 'done':
                 message = '<p>%s</p>' % _('Your payment has been received.')
             elif state == 'cancel':
-                message = '<p>%s</p>' % _('The payment seems to have been canceled.')
+                message = '<p>%s</p>' % _('The payment has been canceled.')
             elif state == 'pending' and tx.acquirer_id.validation == 'manual':
                 message = '<p>%s</p>' % _('Your transaction is waiting confirmation.')
                 if tx.acquirer_id.post_msg:

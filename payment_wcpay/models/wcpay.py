@@ -21,35 +21,35 @@ class AcquirerWcpay(models.Model):
     appid = fields.Char(
         string='APPID',
         required_if_provider='wcpay',
-        help='JSAPI接口中获取openid'
+        help='get appid from JSAPI'
     )
     appsecret = fields.Char(
         string='APPSECRET',
         required_if_provider='wcpay',
-        help='JSAPI接口中获取openid'
+        help='get appsecret from JSAPI'
     )
     mchid = fields.Char(
         string='MCHID',
         required_if_provider='wcpay',
-        help='商户ID'
+        help='merchants ID'
     )
     key = fields.Char(
         string='KEY',
         required_if_provider='wcpay',
-        help='商户支付密钥'
+        help='merchants pay key'
     )
     sslcert_path = fields.Char(
-        string='SSLCERT_PATH - 证书路径',
+        string='SSLCERT_PATH',
         required_if_provider='wcpay',
-        help='证书路径,注意应该填写绝对路径'
+        help='sslcert path, please fill absolute path'
     )
     sslkey_path = fields.Char(
-        string='SSLKEY_PATH - 证书路径',
+        string='SSLKEY_PATH',
         required_if_provider='wcpay',
-        help='证书路径,注意应该填写绝对路径'
+        help='sslkey path, please fill absolute path'
     )
     curl_timeout = fields.Char(
-        string='CURL_TIMEOUT - curl超时',
+        string='CURL_TIMEOUT',
         required_if_provider='wcpay',
         default=30
     )
@@ -58,7 +58,7 @@ class AcquirerWcpay(models.Model):
             ('CURL', 'CURL'),
             ('URLLIB', 'URLLIB')
         ],
-        string='HTTP_CLIENT - HTTP客户端',
+        string='HTTP_CLIENT',
         required_if_provider='wcpay',
         default='CURL'
     )
