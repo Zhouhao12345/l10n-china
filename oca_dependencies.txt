@@ -1,3 +1,2 @@
-connector
-infrastructure-dns
+infrastructure-dns https://github.com/noahzaozao/infrastructure-dns.git 8.0
 
