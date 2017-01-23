@@ -162,7 +162,8 @@ def import_record(session, dns_domain_id, data):
                         record['value'])
             return 'Import record success %s' % record_list_str
         else:
-            return _('Import record error code: %s' % result_json['status']['code'])
+            return _('Import record error code: %s' %
+                   result_json['status']['code'])
     except:
         raise
 
