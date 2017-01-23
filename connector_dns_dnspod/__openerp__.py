@@ -10,10 +10,11 @@
     'license': 'AGPL-3',
     'website': 'https://www.elico-corp.com',
     'data': [
-        'security/connector_group.xml',
-        'security/ir.model.access.csv',
-        'views/dns_domain_view.xml',
-        'views/dns_record_view.xml'
+        # 'security/connector_group.xml',
+        # 'security/ir.model.access.csv',
+        # 'views/dns_backend_view.xml',
+        'views/dns_zone_view.xml',
+        # 'views/dns_record_view.xml'
     ],
     'installable': True,
     'application': False

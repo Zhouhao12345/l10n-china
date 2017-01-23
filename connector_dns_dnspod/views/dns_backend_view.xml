@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="dns_backend_form_inherit" model="ir.ui.view">
+            <field name="name">DNS Backend Form inherit</field>
+            <field name="model">dns.backend</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="connector_dns.dns_backend_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_set_draft']" position="after">
+                    <field name="state" widget="statusbar" clickable="True"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

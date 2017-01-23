@@ -6,7 +6,7 @@
 Connector Dns Dnspod
 ====================
 
-This module aims to allows you to manage your DNSPod domain through Odoo.
+This module aims to allows you to manage your DNSPod zone through Odoo.
 
 Installation
 ============
@@ -27,10 +27,10 @@ Usage
 
 To use this module, you need to:
 #. Create a backend which links to your dnspod.cn.
-#. When you create a domain belongs to the backend,if the domain
+#. When you create a zone belongs to the backend,if the zone
 export to the dnspod.cn successfully,the state will change to
 done,else exception.
-#. Record can be created only in the domain which state is done.
+#. Record can be created only in the zone which state is done.
 
 Known issues / Roadmap
 ======================

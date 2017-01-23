@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from . import backend
-from . import dnspod
+from . import models
 from . import unit
 from . import consumer
-from . import connector

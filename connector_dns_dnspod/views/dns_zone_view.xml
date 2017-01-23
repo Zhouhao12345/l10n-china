@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="dns_zone_form_inherit" model="ir.ui.view">
+            <field name="name">DNS Zone Form inherit</field>
+            <field name="model">dns.zone</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="connector_dns.dns_zone_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='record_ids']" position="before">
+                    <group>
+                        <label for="dns_id_external" string='Dns ID External'/>
+                        <field name="dns_id_external" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
