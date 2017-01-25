@@ -6,4 +6,3 @@ from . import backend
 from . import dnspod
 from . import unit
 from . import consumer
-from . import connector
