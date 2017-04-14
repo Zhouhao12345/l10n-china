@@ -1,1 +1,1 @@
-infrastructure-dns https://github.com/noahzaozao/infrastructure-dns.git 8.0
+infrastructure-dns https://github.com/Zhouhao12345/infrastructure-dns.git 8.0
